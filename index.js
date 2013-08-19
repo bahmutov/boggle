@@ -1,4 +1,4 @@
-var boggle = require('./src/bogge').boggle;
+var boggle = require('./src/boggle').boggle;
 
 // top level input checks, but not too strict
 if (process.argv.length !== 3) {
@@ -20,5 +20,11 @@ console.log(letters.substr(4, 4));
 console.log(letters.substr(8, 4));
 console.log(letters.substr(12, 4));
 
-var chars = letters.split('');
-
+var grid = [
+letters.substr(0, 4).split(''),
+letters.substr(4, 4).split(''),
+letters.substr(8, 4).split(''),
+letters.substr(12, 4).split('')
+];
+// console.dir(grid);
+boggle(grid);
