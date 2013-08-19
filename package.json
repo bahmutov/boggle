@@ -13,5 +13,8 @@
     "words"
   ],
   "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "check-types": "~0.6.4"
+  }
 }
