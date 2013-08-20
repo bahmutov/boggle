@@ -4,10 +4,6 @@ var utils = require('./utils');
 var paths = require('matrix-paths').paths;
 check.verifyFunction(paths, 'paths is not a function');
 
-var dictionary = require('prefix-dictionary');
-check.verifyFunction(dictionary.isWord, 'missing isWord');
-check.verifyFunction(dictionary.isWordPrefix, 'missing isWordPrefix');
-
 function report(words) {
   check.verifyArray(words, 'expected array of words');
   words.sort();
@@ -33,6 +29,10 @@ function boggleString(letters) {
 function boggleGrid(gridOfCharacters) {
   utils.verifyGridOfChars(gridOfCharacters);
   console.assert(gridOfCharacters.length > 0, 'empty array');
+
+  var dictionary = require('prefix-dictionary');
+  check.verifyFunction(dictionary.isWord, 'missing isWord');
+  check.verifyFunction(dictionary.isWordPrefix, 'missing isWordPrefix');
 
   lowerCased = gridOfCharacters.map(function (row) {
     return row.map(function (str) {

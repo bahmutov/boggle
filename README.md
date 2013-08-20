@@ -7,6 +7,7 @@ Small simple nodejs based Boggle grid solver
 After installing nodejs, run:
 
     npm install -g boggle
+    // ignore any warnings
     boggle "ABCD EFGH IJKL MNOP"
 
 The spaces between letters are options, it could be single
