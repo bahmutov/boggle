@@ -8,7 +8,8 @@
     "boggle": "./index.js"
   },
   "scripts": {
-    "test": "gt src/test/*.js --output"
+    "test": "gt src/test/*.js --output",
+    "complexity": "jsc index.js src/*.js"
   },
   "repository": "https://bitbucket.org/bahmutov/boggle.git",
   "keywords": [
@@ -24,6 +25,7 @@
     "prefix-dictionary": "0.0.0"
   },
   "devDependencies": {
-    "gt": "~0.8.8"
+    "gt": "~0.8.8",
+    "jsc": "~0.3.5"
   }
 }

@@ -1,2 +1,4 @@
 cover
 /node_modules
+/report.json
+/report.txt
