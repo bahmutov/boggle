@@ -3,6 +3,11 @@
 var boggle = require('./src/boggle').boggle;
 var report = require('./src/boggle').report;
 
+if (module.parent) {
+  module.exports = boggle;
+  return;
+}
+
 // top level input checks, but not too strict
 if (process.argv.length !== 3) {
   console.error('Expected <boggle> <16 letters>');
