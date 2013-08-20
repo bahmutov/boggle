@@ -1,9 +1,8 @@
 var check = require('check-types');
 var utils = require('./utils');
 
-
-var pathsFrom = require('matrix-paths').pathsFrom;
-check.verifyFunction(pathsFrom, 'pathsFrom is not a function');
+var paths = require('matrix-paths').paths;
+check.verifyFunction(paths, 'paths is not a function');
 
 var dictionary = require('prefix-dictionary');
 check.verifyFunction(dictionary.isWord, 'missing isWord');
@@ -48,7 +47,7 @@ function boggleGrid(gridOfCharacters) {
   });
 
   var uniqueWords = {};
-  pathsFrom(lowerCased, 0, 0, {
+  paths(lowerCased, {
     simple: true,
     stepWhile: function (str, x, y, grid) {
       if (dictionary.isWord(str)) {
