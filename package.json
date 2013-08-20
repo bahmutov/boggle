@@ -3,6 +3,10 @@
   "version": "0.0.0",
   "description": "Boggle grid solver",
   "main": "index.js",
+  "preferGlobal": "true",
+  "bin": {
+    "boggle": "./index.js"
+  },
   "scripts": {
     "test": "gt src/test/*.js --output"
   },

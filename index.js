@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var boggle = require('./src/boggle').boggle;
 var report = require('./src/boggle').report;
 
