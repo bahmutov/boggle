@@ -12,7 +12,6 @@ function verifyGridOfChars(grid) {
 
   console.assert(grid.every(function (row) {
     return row.every(function (value) {
-      console.log('checking', value);
       return check.isString(value) && check.isLength(value, 1);
     });
   }), 'expected grid of characters');
@@ -22,21 +21,27 @@ function boggle(gridOfCharacters) {
   verifyGridOfChars(gridOfCharacters);
   console.assert(gridOfCharacters.length > 0, 'empty array');
 
-  var words = [];
-  pathsFrom(gridOfCharacters, 0, 0, {
+  lowerCased = gridOfCharacters.map(function (row) {
+    return row.map(function (str) {
+      return str.toLowerCase();
+    });
+  });
+
+  var uniqueWords = {};
+  pathsFrom(lowerCased, 0, 0, {
     simple: true,
     stepWhile: function (str, x, y, grid) {
-      console.log('checking "' + str + '"');
+      // console.log('checking "' + str + '"');
       if (dictionary.isWord(str)) {
-        console.log('"' + str + '" is a word');
-        words.push(str);
+        // console.log('"' + str + '" is a word');
+        uniqueWords[str] = true;
         return true;
       }
     }
   });
 
   console.log('from 0,0, found words');
-  console.log(words);
+  console.log(Object.keys(uniqueWords));
 }
 
 module.exports = {
