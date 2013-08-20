@@ -1,4 +1,5 @@
 var boggle = require('./src/boggle').boggle;
+var report = require('./src/boggle').report;
 
 // top level input checks, but not too strict
 if (process.argv.length !== 3) {
@@ -7,6 +8,7 @@ if (process.argv.length !== 3) {
 }
 
 var letters = '' + process.argv[2];
+letters = letters.replace(/\s/g, '');
 if (letters.length !== 16) {
   console.error('Expected string with 16 characters');
   console.error(letters);
@@ -20,4 +22,6 @@ console.log(letters.substr(4, 4));
 console.log(letters.substr(8, 4));
 console.log(letters.substr(12, 4));
 
-boggle(letters);
+var words = boggle(letters);
+report(words);
+process.exit(0);

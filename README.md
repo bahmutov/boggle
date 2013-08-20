@@ -14,4 +14,4 @@ string with 16 characters. In this case, you don't need quotes:
 
     boggle ABCDEFGHIJKLMNOP
 
-Case does not matter.
+Case does not matter, it will be converted to lowercase.

@@ -42,7 +42,6 @@ function boggleGrid(gridOfCharacters) {
 
   var uniqueWords = {};
   paths(lowerCased, {
-    simple: true,
     stepWhile: function (str, x, y, grid) {
       if (dictionary.isWord(str)) {
         // found whole word, maybe there is more!
@@ -58,7 +57,6 @@ function boggleGrid(gridOfCharacters) {
 
   words = Object.keys(uniqueWords);
   words = utils.validWords(words);
-  report(words);
   return words;
 }
 
@@ -76,5 +74,6 @@ function boggle(str) {
 }
 
 module.exports = {
-  boggle: boggle
+  boggle: boggle,
+  report: report
 };
