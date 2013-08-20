@@ -17,6 +17,23 @@ function verifyGridOfChars(grid) {
   }), 'expected grid of characters');
 }
 
+function unary(fn) {
+  return function (a) {
+    return fn(a);
+  };
+}
+
+function report(words) {
+  check.verifyArray(words, 'expected array of words');
+  words.sort();
+  words.forEach(unary(console.log));
+  var n = words.reduce(function (sum, word) {
+    return sum + word.length;
+  }, 0);
+  console.log(words.length + ' words');
+  console.log(n + ' letters');
+}
+
 function boggle(gridOfCharacters) {
   verifyGridOfChars(gridOfCharacters);
   console.assert(gridOfCharacters.length > 0, 'empty array');
@@ -40,8 +57,8 @@ function boggle(gridOfCharacters) {
     }
   });
 
-  console.log('from 0,0, found words');
-  console.log(Object.keys(uniqueWords));
+  words = Object.keys(uniqueWords);
+  report(words);
 }
 
 module.exports = {
