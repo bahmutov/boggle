@@ -45,6 +45,12 @@ function boggleString(letters) {
   return boggleGrid(grid);
 }
 
+function validWords(words) {
+  return words.filter(function (word) {
+    return word.length > 2;
+  });
+}
+
 function boggleGrid(gridOfCharacters) {
   verifyGridOfChars(gridOfCharacters);
   console.assert(gridOfCharacters.length > 0, 'empty array');
@@ -67,6 +73,7 @@ function boggleGrid(gridOfCharacters) {
   });
 
   words = Object.keys(uniqueWords);
+  words = validWords(words);
   report(words);
   return words;
 }
