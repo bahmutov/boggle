@@ -72,8 +72,11 @@ function boggleGrid(gridOfCharacters) {
 }
 
 function boggle(str) {
-  if (check.isString(str) && (str.length === 16)) {
-    return boggleString(str);
+  if (check.isString(str)) {
+    str = str.replace(/\s/g, '');
+    if (str.length === 16) {
+      return boggleString(str);
+    }
   }
   if (check.isArray(str) && (str.length === 4)) {
     return boggleGrid(str);

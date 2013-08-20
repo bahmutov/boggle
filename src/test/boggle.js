@@ -11,3 +11,15 @@ gt.test('as and bs', function () {
   gt.array(words, 'got array of words');
   gt.equal(words.length, 5, '5 words');
 });
+
+gt.test('as and bs with spaces', function () {
+  var words = boggle('AABB BBBB BBBB BBBB');
+  gt.array(words, 'got array of words');
+  gt.equal(words.length, 5, '5 words');
+});
+
+gt.test('as and bs with weird spaces', function () {
+  var words = boggle('  AABB    BB  BB B BB B BBB B ');
+  gt.array(words, 'got array of words');
+  gt.equal(words.length, 5, '5 words');
+});
