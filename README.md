@@ -10,20 +10,20 @@ After installing nodejs, run:
     // ignore any warnings
     boggle "ABCD EFGH IJKL MNOP"
 
-The spaces between letters are options, it could be single
+The spaces between letters are optional, it could be single
 string with 16 characters. In this case, you don't need quotes:
 
     boggle ABCDEFGHIJKLMNOP
 
-Case does not matter, it will be converted to lowercase.
+Case does not matter, characters will be converted to lowercase.
 
 ## Main logic
 
 The algorithm iterates over the 2D grid, trying to walk
-depth first, while possible (including diagonally, but not
-visiting same cell more than once). At each step, the accumulated
+depth first, including diagonally, but not
+visiting same cell more than once. At each step, the accumulated
 string is checked against the dictionary. Walking stops and
-the algorithm backtracks to previous depth if the string
+the algorithm backtracks to previous depth level if the string
 is no longer a valid word or valid word prefix.
 
     // src/boggle.js
@@ -70,3 +70,5 @@ This might require installing [jsc](https://npmjs.org/package/jsc) tool globally
 ## Todo
 
 * Use jshint to see possible bugs
+* check dictionary initialization (is it a good idea to initialize using a sorted words array)
+* hook into trie implementation to store previous prefix query, because we keep asking for same prefix path "h - he - hel - hell - hello".
