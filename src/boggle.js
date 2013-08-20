@@ -55,7 +55,7 @@ function boggleGrid(gridOfCharacters) {
     }
   });
 
-  words = Object.keys(uniqueWords);
+  var words = Object.keys(uniqueWords);
   words = utils.validWords(words);
   return words;
 }
