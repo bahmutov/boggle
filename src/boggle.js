@@ -61,6 +61,7 @@ function boggleGrid(gridOfCharacters) {
 }
 
 function boggle(str) {
+  // console.log('boggle on', str);
   if (check.isString(str)) {
     str = str.replace(/\s/g, '');
     if (str.length === 16) {
