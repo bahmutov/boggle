@@ -35,3 +35,26 @@ gt.test('helios', function () {
   gt.array(words, 'got array of words');
   gt.equal(words.length, 13, 'couple of words');
 });
+
+gt.test('grid', function () {
+  var grid = [
+  ['a', 'b', 'b', 'a'],
+  ['a', 'b', 'b', 'a'],
+  ['a', 'b', 'b', 'a'],
+  ['a', 'b', 'b', 'a']
+  ];
+  var words = boggle(grid);
+  gt.array(words, 'got words array');
+});
+
+gt.test('reporting', function () {
+  var report = require('../boggle').report;
+  gt.arity(report, 1, 'single argument');
+  report(['one', 'two']);
+});
+
+gt.test('invalid input', function () {
+  gt.raises(function () {
+    boggle('abc');
+  }, Error, 'string is too short');
+});

@@ -19,7 +19,9 @@
   "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "check-types": "~0.6.4"
+    "check-types": "~0.6.4",
+    "matrix-paths": "0.0.2",
+    "prefix-dictionary": "0.0.0"
   },
   "devDependencies": {
     "gt": "~0.8.8"
