@@ -16,7 +16,14 @@ function unary(fn) {
   };
 }
 
+function validWords(words) {
+  return words.filter(function (word) {
+    return word.length > 2;
+  });
+}
+
 module.exports = {
   verifyGridOfChars: verifyGridOfChars,
-  unary: unary
+  unary: unary,
+  validWords: validWords
 };
