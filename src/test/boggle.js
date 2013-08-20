@@ -29,3 +29,9 @@ gt.test('alphabet', function () {
   gt.array(words, 'got array of words');
   gt.equal(words.length, 6, 'couple of words');
 });
+
+gt.test('helios', function () {
+  var words = boggle('heli zzzo zzzs zzzz');
+  gt.array(words, 'got array of words');
+  gt.equal(words.length, 6, 'couple of words');
+});

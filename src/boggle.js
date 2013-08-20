@@ -45,7 +45,12 @@ function boggleGrid(gridOfCharacters) {
     simple: true,
     stepWhile: function (str, x, y, grid) {
       if (dictionary.isWord(str)) {
+        // found whole word, maybe there is more!
         uniqueWords[str] = true;
+        return true;
+      }
+      if (dictionary.isWordPrefix(str)) {
+        // not a word, but possible
         return true;
       }
     }
