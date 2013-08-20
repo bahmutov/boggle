@@ -34,7 +34,18 @@ function report(words) {
   console.log(n + ' letters');
 }
 
-function boggle(gridOfCharacters) {
+function boggleString(letters) {
+  letters = letters.toLowerCase();
+  var grid = [
+    letters.substr(0, 4).split(''),
+    letters.substr(4, 4).split(''),
+    letters.substr(8, 4).split(''),
+    letters.substr(12, 4).split('')
+  ];
+  return boggleGrid(grid);
+}
+
+function boggleGrid(gridOfCharacters) {
   verifyGridOfChars(gridOfCharacters);
   console.assert(gridOfCharacters.length > 0, 'empty array');
 
@@ -48,9 +59,7 @@ function boggle(gridOfCharacters) {
   pathsFrom(lowerCased, 0, 0, {
     simple: true,
     stepWhile: function (str, x, y, grid) {
-      // console.log('checking "' + str + '"');
       if (dictionary.isWord(str)) {
-        // console.log('"' + str + '" is a word');
         uniqueWords[str] = true;
         return true;
       }
@@ -59,6 +68,17 @@ function boggle(gridOfCharacters) {
 
   words = Object.keys(uniqueWords);
   report(words);
+  return words;
+}
+
+function boggle(str) {
+  if (check.isString(str) && (str.length === 16)) {
+    return boggleString(str);
+  }
+  if (check.isArray(str) && (str.length === 4)) {
+    return boggleGrid(str);
+  }
+  throw new Error('Invalid boggle input ' + JSON.stringify(str));
 }
 
 module.exports = {
