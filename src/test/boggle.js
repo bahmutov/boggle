@@ -40,7 +40,7 @@ gt.test('Qu', function() {
   var words = boggle(['a','a','a','a','a','a','a','a','a','a','a','a','a','a','a','Qu']);
   gt.array(words, 'got array of words');
   gt.equal(words.length, 2, 'couple of words');
-})
+});
 
 gt.test('grid', function () {
   var grid = [
@@ -66,16 +66,16 @@ gt.test('invalid input', function () {
 });
 
 gt.test('board generation', function () {
-  var board = boggle.generate()
-  gt.array(board, 'got board array')
+  var board = boggle.generate();
+  gt.array(board, 'got board array');
   gt.equal(board.length, 16, 'couple of words');
 });
 
 gt.test('scoring', function() {
-  gt.equal(boggle.score('a'), 0, 'word score')
-  gt.equal(boggle.score('aaa'), 1, 'word score')
-  gt.equal(boggle.score('aaaaa'), 2, 'word score')
-  gt.equal(boggle.score('aaaaaa'), 3, 'word score')
-  gt.equal(boggle.score('aaaaaaa'), 5, 'word score')
-  gt.equal(boggle.score('aaaaaaaaaaaaa'), 11, 'word score')
-})
+  gt.equal(boggle.score('a'), 0, 'word score');
+  gt.equal(boggle.score('aaa'), 1, 'word score');
+  gt.equal(boggle.score('aaaaa'), 2, 'word score');
+  gt.equal(boggle.score('aaaaaa'), 3, 'word score');
+  gt.equal(boggle.score('aaaaaaa'), 5, 'word score');
+  gt.equal(boggle.score('aaaaaaaaaaaaa'), 11, 'word score');
+});

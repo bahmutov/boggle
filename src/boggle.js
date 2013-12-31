@@ -96,7 +96,7 @@ boggle.generate = function () {
     var letter = _.sample(die);
     return letter === 'Q' ? 'Qu' : letter;
   });
-}
+};
 
 boggle.score = function (word) {
   var len = word.length;
@@ -106,7 +106,7 @@ boggle.score = function (word) {
   else if (len <= 6) return 3;
   else if (len <= 7) return 5;
   else return 11;
-}
+};
 
 module.exports = {
   boggle: boggle,
