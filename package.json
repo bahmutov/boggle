@@ -11,7 +11,12 @@
     "test": "node node_modules/gt src/test/*.js --output",
     "complexity": "node node_modules/jsc index.js src/*.js"
   },
-  "repository": "https://bitbucket.org/bahmutov/boggle.git",
+  "pre-commit": "npm test",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bahmutov/boggle.git"
+  },
+  "private": false,
   "keywords": [
     "boggle",
     "solver",
@@ -26,6 +31,7 @@
   },
   "devDependencies": {
     "gt": "~0.8.21",
-    "jsc": "~0.3.11"
+    "jsc": "~0.3.11",
+    "pre-git": "0.0.14"
   }
 }
