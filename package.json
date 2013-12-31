@@ -8,8 +8,8 @@
     "boggle": "./index.js"
   },
   "scripts": {
-    "test": "gt src/test/*.js --output",
-    "complexity": "jsc index.js src/*.js"
+    "test": "node node_modules/gt src/test/*.js --output",
+    "complexity": "node node_modules/jsc index.js src/*.js"
   },
   "repository": "https://bitbucket.org/bahmutov/boggle.git",
   "keywords": [
@@ -20,12 +20,12 @@
   "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "check-types": "~0.6.4",
-    "matrix-paths": "0.0.2",
-    "prefix-dictionary": "0.0.0"
+    "check-types": "~1.1.1",
+    "matrix-paths": "0.0.3",
+    "prefix-dictionary": "0.0.1"
   },
   "devDependencies": {
     "gt": "~0.8.21",
-    "jsc": "~0.3.5"
+    "jsc": "~0.3.11"
   }
 }

@@ -1,11 +1,12 @@
 var check = require('check-types');
+var verify = check.verify;
 var utils = require('./utils');
 
 var paths = require('matrix-paths').paths;
-check.verifyFunction(paths, 'paths is not a function');
+verify.fn(paths, 'paths is not a function');
 
 function report(words) {
-  check.verifyArray(words, 'expected array of words');
+  verify.array(words, 'expected array of words');
   words.sort();
   words.forEach(utils.unary(console.log));
   var n = words.reduce(function (sum, word) {
@@ -31,8 +32,8 @@ function boggleGrid(gridOfCharacters) {
   console.assert(gridOfCharacters.length > 0, 'empty array');
 
   var dictionary = require('prefix-dictionary');
-  check.verifyFunction(dictionary.isWord, 'missing isWord');
-  check.verifyFunction(dictionary.isWordPrefix, 'missing isWordPrefix');
+  verify.fn(dictionary.isWord, 'missing isWord');
+  verify.fn(dictionary.isWordPrefix, 'missing isWordPrefix');
 
   lowerCased = gridOfCharacters.map(function (row) {
     return row.map(function (str) {
@@ -62,13 +63,13 @@ function boggleGrid(gridOfCharacters) {
 
 function boggle(str) {
   // console.log('boggle on', str);
-  if (check.isString(str)) {
+  if (check.string(str)) {
     str = str.replace(/\s/g, '');
     if (str.length === 16) {
       return boggleString(str);
     }
   }
-  if (check.isArray(str) && (str.length === 4)) {
+  if (check.array(str) && (str.length === 4)) {
     return boggleGrid(str);
   }
   throw new Error('Invalid boggle input ' + JSON.stringify(str));

@@ -1,11 +1,11 @@
 var check = require('check-types');
 
 function verifyGridOfChars(grid) {
-  check.verifyArray(grid, 'expected an Array');
+  check.verify.array(grid, 'expected an Array');
 
   console.assert(grid.every(function (row) {
     return row.every(function (value) {
-      return check.isString(value) && check.isLength(value, 1);
+      return check.string(value) && check.length(value, 1);
     });
   }), 'expected grid of characters');
 }
