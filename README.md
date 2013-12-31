@@ -2,6 +2,14 @@
 
 Small simple nodejs based Boggle grid solver
 
+[![NPM][boggle-icon] ][boggle-url]
+
+[![Build status][boggle-ci-image] ][boggle-ci-url]
+[![dependencies][boggle-dependencies-image] ][boggle-dependencies-url]
+[![devdependencies][boggle-devdependencies-image] ][boggle-devdependencies-url]
+
+[![endorse][endorse-image] ][endorse-url]
+
 ## Install and run
 
 After installing nodejs, run:
@@ -72,3 +80,29 @@ This might require installing [jsc](https://npmjs.org/package/jsc) tool globally
 * Use jshint to see possible bugs
 * check dictionary initialization (is it a good idea to initialize using a sorted words array)
 * hook into trie implementation to store previous prefix query, because we keep asking for same prefix path "h - he - hel - hell - hello".
+
+## Small print
+
+Author: Gleb Bahmutov &copy; 2013
+
+* [@bahmutov](https://twitter.com/bahmutov)
+* [glebbahmutov.com](http://glebbahmutov.com)
+* [blog](http://bahmutov.calepin.co/)
+
+License: MIT - do anything with the code, but don't blame me if it does not work.
+
+Spread the word: tweet, star on github, click *endorse*, etc.
+
+Support: if you find any problems with this module, email / tweet / open issue on Github
+
+
+[boggle-icon]: https://nodei.co/npm/boggle.png?downloads=true
+[boggle-url]: https://npmjs.org/package/boggle
+[boggle-ci-image]: https://travis-ci.org/bahmutov/boggle.png?branch=master
+[boggle-ci-url]: https://travis-ci.org/bahmutov/boggle
+[boggle-dependencies-image]: https://david-dm.org/bahmutov/boggle.png
+[boggle-dependencies-url]: https://david-dm.org/bahmutov/boggle
+[boggle-devdependencies-image]: https://david-dm.org/bahmutov/boggle/dev-status.png
+[boggle-devdependencies-url]: https://david-dm.org/bahmutov/boggle#info=devDependencies
+[endorse-image]: https://api.coderwall.com/bahmutov/endorsecount.png
+[endorse-url]: https://coderwall.com/bahmutov
