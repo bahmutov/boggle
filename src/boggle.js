@@ -28,7 +28,7 @@ function boggleString(letters) {
 }
 
 function boggleGrid(gridOfCharacters) {
-  utils.verifyGridOfChars(gridOfCharacters);
+  utils.verifyGridOfStrings(gridOfCharacters);
   console.assert(gridOfCharacters.length > 0, 'empty array');
 
   var dictionary = require('prefix-dictionary');
@@ -71,6 +71,17 @@ function boggle(str) {
   }
   if (check.array(str) && (str.length === 4)) {
     return boggleGrid(str);
+  }
+  
+  // support a single array as input
+  if (check.array(str) && (str.length === 16)) {
+    var grid = [
+      str.slice(0, 4),
+      str.slice(4, 8),
+      str.slice(8, 12),
+      str.slice(12, 16),
+    ];
+    return boggleGrid(grid);
   }
   throw new Error('Invalid boggle input ' + JSON.stringify(str));
 }
