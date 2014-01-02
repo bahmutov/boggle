@@ -1,6 +1,6 @@
 {
   "name": "boggle",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Boggle grid solver",
   "main": "index.js",
   "preferGlobal": "true",
@@ -12,6 +12,11 @@
     "complexity": "node node_modules/jsc index.js src/*.js"
   },
   "pre-commit": "npm test",
+  "pre-push": [
+    "rm -rf node_modules",
+    "npm install",
+    "npm test"
+  ],
   "repository": {
     "type": "git",
     "url": "git://github.com/bahmutov/boggle.git"
