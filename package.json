@@ -12,6 +12,11 @@
     "complexity": "node node_modules/jsc index.js src/*.js"
   },
   "pre-commit": "npm test",
+  "pre-push": [
+    "rm -rf node_modules",
+    "npm install",
+    "npm test"
+  ],
   "repository": {
     "type": "git",
     "url": "git://github.com/bahmutov/boggle.git"
