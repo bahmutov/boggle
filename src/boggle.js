@@ -3,7 +3,7 @@ var verify = check.verify;
 var utils = require('./utils');
 var _ = require('lodash');
 
-var paths = require('matrix-paths').paths;
+var paths = require('matrix-paths-zolmeister').paths;
 verify.fn(paths, 'paths is not a function');
 
 function report(words) {

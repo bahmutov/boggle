@@ -1,6 +1,6 @@
 {
   "name": "boggle",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Boggle grid solver",
   "main": "index.js",
   "preferGlobal": "true",
@@ -31,7 +31,7 @@
   "license": "MIT",
   "dependencies": {
     "check-types": "~1.1.1",
-    "matrix-paths": "0.0.3",
+    "matrix-paths-zolmeister": "0.0.4",
     "lodash": "~2.4.1",
     "prefix-dictionary": "0.0.2"
   },
