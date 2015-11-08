@@ -1,6 +1,6 @@
 {
   "name": "boggle",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Boggle grid solver",
   "main": "index.js",
   "preferGlobal": "true",
