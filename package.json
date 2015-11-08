@@ -38,7 +38,10 @@
   "config": {
     "pre-git": {
       "commit-msg": "validate-commit-msg",
-      "pre-commit": "npm test",
+      "pre-commit": [
+        "npm test",
+        "npm version"
+      ],
       "pre-push": [
         "rm -rf node_modules",
         "npm install",
