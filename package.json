@@ -8,8 +8,8 @@
     "boggle": "./index.js"
   },
   "scripts": {
-    "test": "node node_modules/gt src/test/*.js --output",
-    "complexity": "node node_modules/jsc index.js src/*.js"
+    "test": "gt src/test/*.js --output",
+    "complexity": "jsc index.js src/*.js"
   },
   "pre-commit": "npm test",
   "pre-push": [
@@ -36,8 +36,8 @@
     "prefix-dictionary": "0.0.2"
   },
   "devDependencies": {
-    "gt": "0.8.47",
-    "jsc": "~0.3.11",
+    "gt": "0.8.49",
+    "jsc": "0.3.11",
     "pre-git": "0.1.1"
   }
 }
