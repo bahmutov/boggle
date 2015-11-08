@@ -9,14 +9,9 @@
   },
   "scripts": {
     "test": "gt src/test/*.js --output",
-    "complexity": "jsc index.js src/*.js"
+    "complexity": "jsc index.js src/*.js",
+    "commit": "./node_modules/pre-git/node_modules/commitizen/bin/git-cz"
   },
-  "pre-commit": "npm test",
-  "pre-push": [
-    "rm -rf node_modules",
-    "npm install",
-    "npm test"
-  ],
   "repository": {
     "type": "git",
     "url": "git://github.com/bahmutov/boggle.git"
@@ -31,13 +26,29 @@
   "license": "MIT",
   "dependencies": {
     "check-types": "1.4.0",
-    "lodash": "~2.4.1",
+    "lodash": "3.10.1",
     "matrix-paths-zolmeister": "0.0.4",
     "prefix-dictionary": "0.0.2"
   },
   "devDependencies": {
     "gt": "0.8.49",
     "jsc": "0.3.11",
-    "pre-git": "0.1.1"
+    "pre-git": "1.2.1"
+  },
+  "config": {
+    "pre-git": {
+      "commit-msg": "validate-commit-msg",
+      "pre-commit": "npm test",
+      "pre-push": [
+        "rm -rf node_modules",
+        "npm install",
+        "npm test"
+      ],
+      "post-commit": [],
+      "post-merge": []
+    }
+  },
+  "czConfig": {
+    "path": "node_modules/pre-git/node_modules/cz-conventional-changelog"
   }
 }
