@@ -43,9 +43,8 @@
         "npm version"
       ],
       "pre-push": [
-        "rm -rf node_modules",
-        "npm install",
-        "npm test"
+        "npm test",
+        "npm version"
       ],
       "post-commit": [],
       "post-merge": []
