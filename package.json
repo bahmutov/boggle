@@ -10,7 +10,8 @@
   "scripts": {
     "test": "gt src/test/*.js --output",
     "complexity": "jsc index.js src/*.js",
-    "commit": "./node_modules/pre-git/node_modules/commitizen/bin/git-cz"
+    "commit": "./node_modules/pre-git/node_modules/commitizen/bin/git-cz",
+    "dont-break": "dont-break --timeout 30"
   },
   "repository": {
     "type": "git",

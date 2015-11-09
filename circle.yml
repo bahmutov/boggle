@@ -1,6 +1,9 @@
 machine:
   node:
     version: "0.12"
+dependencies:
+  post:
+    - npm install -g dont-break
 test:
   override:
-    - npm test
+    - npm run dont-break

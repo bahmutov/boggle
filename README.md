@@ -10,6 +10,9 @@ Small simple nodejs based Boggle grid solver
 
 [![endorse][endorse-image] ][endorse-url]
 
+Breaking dependencies? [![Dont-break][circle-ci-image] ][circle-ci-url] using
+[dont-break](https://github.com/bahmutov/dont-break)
+
 ## Install and run
 
 After installing nodejs, run:
@@ -106,3 +109,5 @@ Support: if you find any problems with this module, email / tweet / open issue o
 [boggle-devdependencies-url]: https://david-dm.org/bahmutov/boggle#info=devDependencies
 [endorse-image]: https://api.coderwall.com/bahmutov/endorsecount.png
 [endorse-url]: https://coderwall.com/bahmutov
+[circle-ci-image]: https://circleci.com/gh/bahmutov/boggle.svg?style=svg
+[circle-ci-url]: https://circleci.com/gh/bahmutov/boggle
