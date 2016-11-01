@@ -1,7 +1,7 @@
 {
   "name": "boggle",
-  "version": "0.1.4",
   "description": "Boggle grid solver",
+  "version": "0.0.0-semantic-release",
   "main": "index.js",
   "preferGlobal": "true",
   "bin": {
@@ -11,11 +11,12 @@
     "test": "gt src/test/*.js --output",
     "complexity": "jsc index.js src/*.js",
     "commit": "./node_modules/pre-git/node_modules/commitizen/bin/git-cz",
-    "dont-break": "dont-break --timeout 30"
+    "dont-break": "dont-break --timeout 30",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/bahmutov/boggle.git"
+    "url": "https://github.com/bahmutov/boggle.git"
   },
   "private": false,
   "keywords": [
@@ -32,26 +33,22 @@
     "prefix-dictionary": "0.0.2"
   },
   "devDependencies": {
-    "gt": "0.8.49",
+    "gt": "0.10.0",
     "jsc": "0.3.11",
-    "pre-git": "1.2.1"
+    "pre-git": "3.10.0",
+    "semantic-release": "^4.3.5"
   },
   "config": {
     "pre-git": {
-      "commit-msg": "validate-commit-msg",
+      "commit-msg": "simple",
       "pre-commit": [
-        "npm test",
-        "npm version"
+        "npm test"
       ],
       "pre-push": [
-        "npm test",
-        "npm version"
+        "npm test"
       ],
       "post-commit": [],
       "post-merge": []
     }
-  },
-  "czConfig": {
-    "path": "node_modules/pre-git/node_modules/cz-conventional-changelog"
   }
 }

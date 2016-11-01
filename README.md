@@ -8,7 +8,7 @@ Small simple nodejs based Boggle grid solver
 [![dependencies][boggle-dependencies-image] ][boggle-dependencies-url]
 [![devdependencies][boggle-devdependencies-image] ][boggle-devdependencies-url]
 
-[![endorse][endorse-image] ][endorse-url]
+[![semantic-release][semantic-image] ][semantic-url]
 
 Breaking dependencies? [![Dont-break][circle-ci-image] ][circle-ci-url] using
 [dont-break](https://github.com/bahmutov/dont-break)
@@ -107,7 +107,7 @@ Support: if you find any problems with this module, email / tweet / open issue o
 [boggle-dependencies-url]: https://david-dm.org/bahmutov/boggle
 [boggle-devdependencies-image]: https://david-dm.org/bahmutov/boggle/dev-status.png
 [boggle-devdependencies-url]: https://david-dm.org/bahmutov/boggle#info=devDependencies
-[endorse-image]: https://api.coderwall.com/bahmutov/endorsecount.png
-[endorse-url]: https://coderwall.com/bahmutov
 [circle-ci-image]: https://circleci.com/gh/bahmutov/boggle.svg?style=svg
 [circle-ci-url]: https://circleci.com/gh/bahmutov/boggle
+[semantic-image]: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg
+[semantic-url]: https://github.com/semantic-release/semantic-release
