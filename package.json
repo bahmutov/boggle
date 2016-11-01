@@ -7,12 +7,17 @@
   "bin": {
     "boggle": "./index.js"
   },
+  "files": [
+    "index.js",
+    "src/*.js"
+  ],
   "scripts": {
     "test": "gt src/test/*.js --output",
     "complexity": "jsc index.js src/*.js",
     "commit": "./node_modules/pre-git/node_modules/commitizen/bin/git-cz",
     "dont-break": "dont-break --timeout 30",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "size": "t=\"$(npm pack .)\"; wc -c \"${t}\"; tar tvf \"${t}\"; rm \"${t}\";"
   },
   "repository": {
     "type": "git",
@@ -45,7 +50,8 @@
         "npm test"
       ],
       "pre-push": [
-        "npm test"
+        "npm test",
+        "npm run size"
       ],
       "post-commit": [],
       "post-merge": []
